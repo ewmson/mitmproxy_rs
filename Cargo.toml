@@ -34,7 +34,7 @@ log = "0.4.18"
 once_cell = "1"
 pretty-hex = "0.4.0"
 rand_core = { version = "0.6.4", features = ["getrandom"] }
-smoltcp = "0.10"
+smoltcp = "0.10.1"
 tokio = { version = "1.34.0", features = ["macros", "net", "rt-multi-thread", "sync", "time", "io-util", "process"] }
 boringtun = { version = "0.6", default-features = false }
 x25519-dalek = "=2.0.0-rc.3"
@@ -47,10 +47,10 @@ futures-util = { version = "0.3.29", features = ["sink"] }
 lru_time_cache = "0.11.11"
 internet-packet = { version = "0.2.0", features = ["smoltcp"] }
 
-# [patch.crates-io]
+[patch.crates-io]
 # tokio = { path = "../tokio/tokio" }
-# smoltcp = { git = 'https://github.com/mhils/smoltcp', rev = 'f65351adfa92db5193f368368cb668bac721fe43' }
-
+smoltcp = { git = 'https://github.com/ewmson/smoltcp', rev = 'd02cf94397f68eb09755ce1be61c668f1bc52472' }
+boringtun = { git= "https://github.com/ewmson/boringtun", rev = "5b5c810f181711b642d497ab075a4c40742fcc31" }
 [target.'cfg(windows)'.dependencies.windows]
 version = "0.52.0"
 features = [
